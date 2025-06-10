@@ -14,7 +14,7 @@ import java.time.LocalDate;
         "classes/entidades de Usuário e Vítmas ")
 
 @Data
-@Table(name= "t_triagem")
+@Table
 @Entity
 public class Triagem {
 

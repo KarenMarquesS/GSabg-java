@@ -1,6 +1,6 @@
-INSERT INTO Usuario ( nome_completo, funcao, email, senha) VALUES ('Ana Clara Silveira Souza', 'ADMIN', 'ana.souza@example.com', 'Senha@12');
-INSERT INTO Usuario ( nome_completo, funcao, email, senha) VALUES ( 'Bruno Henrique Costa Lima', 'PROFISSIONAL', 'bruno.lima@example.com', 'Senha#13');
-INSERT INTO Usuario ( nome_completo, funcao, email, senha) VALUES ( 'Joana da Silva', 'VOLUNTARIO', 'joana.silva@email.com', 'Senha@1');
+INSERT INTO Usuario (nome_completo, funcao, email, senha) VALUES ('Ana Clara Silveira Souza', 'ADMIN', 'ana.souza@example.com', 'Senha@12');
+INSERT INTO Usuario (nome_completo, funcao, email, senha) VALUES ( 'Bruno Henrique Costa Lima', 'PROFISSIONAL', 'bruno.lima@example.com', 'Senha#13');
+INSERT INTO Usuario (nome_completo, funcao, email, senha) VALUES ( 'Joana da Silva', 'VOLUNTARIO', 'joana.silva@email.com', 'Senha@1');
 INSERT INTO Usuario (nome_completo, funcao, email, senha) VALUES ( 'João Pedro Diniz', 'PROFISSIONAL', 'jpdiniz@email.com', 'Senha@10' );
 
 INSERT INTO Triagem (id_triagem, prioridade, estado_saude, classificacao, data_triagem, id_usuario) VALUES (1, 'ALTA', 'Grave, necessita de cirurgia imediata', 1, TO_DATE('2024-06-01', 'YYYY-MM-DD'), 1);

@@ -15,7 +15,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "t_usuario")
+@Table
 public class Usuario {
 
     @Id
@@ -48,5 +48,3 @@ public class Usuario {
     @JsonManagedReference
     private List<Triagem> triagens;
 }
-
-
