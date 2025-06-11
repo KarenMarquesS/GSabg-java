@@ -23,7 +23,7 @@ public class VitimaCachingServico {
         return Optional.ofNullable(vtR.findByIdVitima(id_vitima));
     }
 
-    @Cacheable(value = "listarTodasVitimasPorIdade", key = "#idade")
+    @Cacheable(value = "listarTodasVitimasPorIdade")
     public List<Vitima> todasVitimasPorIdade(){
         return vtR.listaTodasVitimasPorIdade();
     }

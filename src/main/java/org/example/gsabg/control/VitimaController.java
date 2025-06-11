@@ -36,20 +36,18 @@ public class VitimaController {
         return vitima;
     }
 
-
     @Operation(description = "Este endpoint irá retornar uma lista das vitimas com uma idade especifica, em ordem crescente ",
                tags = "Idade da vitima", summary = "Retorna uma lista das vitimas com uma idade especifica")
     @GetMapping(value = "/vitimaporidade")
     public List<Vitima> retornaVitimaPorIdade (@RequestParam("idade") int idade) {
-        return vtR.listaVitimaPorIdade(idade);
+        return vtC.vitimaPorIdade(idade);
     }
-
 
     @Operation(description = "Este endpoint irá retornar uma lista das vitimas ordenadas pela idade decrescente ",
             tags = "Idade da vitima", summary = "Retorna uma lista das vitimas ordenadas pela idade")
     @GetMapping(value = "/todasvitimas")
-    public List<Vitima> retornaTodasVitimas(){
-        return vtR.listaTodasVitimasPorIdade();
+    public List<Vitima> listarTodasVitimas(){
+        return vtC.todasVitimasPorIdade();
     }
 
 

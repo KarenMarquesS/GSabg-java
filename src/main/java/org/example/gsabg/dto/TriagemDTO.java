@@ -11,7 +11,7 @@ public class TriagemDTO {
     private int id_triagem;
     private PrioriEnum prioridade;
     private String estado_saude;
-    private int classificaco;
+    private int classificacao;
     private LocalDate data_triagem;
     private Usuario usuario;
     private int id_user;
@@ -23,11 +23,11 @@ public class TriagemDTO {
     public TriagemDTO() {
     }
 
-    public TriagemDTO(int id_triagem, PrioriEnum prioridade, String estado_saude, int classificaco, LocalDate data_triagem, Usuario usuario, Vitima vitima) {
+    public TriagemDTO(int id_triagem, PrioriEnum prioridade, String estado_saude, int classificacao, LocalDate data_triagem, Usuario usuario, Vitima vitima) {
         this.id_triagem = id_triagem;
         this.prioridade = prioridade;
         this.estado_saude = estado_saude;
-        this.classificaco = classificaco;
+        this.classificacao = classificacao;
         this.data_triagem = data_triagem;
         this.usuario = usuario;
         this.vitima = vitima;
@@ -87,12 +87,12 @@ public class TriagemDTO {
         this.estado_saude = estado_saude;
     }
 
-    public int getClassificaco() {
-        return classificaco;
+    public int getClassificacao() {
+        return classificacao;
     }
 
-    public void setClassificaco(int classificaco) {
-        this.classificaco = classificaco;
+    public void setClassificacao(int classificaco) {
+        this.classificacao = classificaco;
     }
 
     public LocalDate getData_triagem() {

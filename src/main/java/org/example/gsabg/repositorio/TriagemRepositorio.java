@@ -20,17 +20,16 @@ public interface TriagemRepositorio extends JpaRepository<Triagem, Integer> {
 
     // Busca pelo ID_triagem
     @Query("from Triagem tri where tri.id_triagem = :id_triagem")
-    public Optional<Triagem> buscarIdTriagem(@Param("id_traigem") int id_triagem);
+    public Optional<Triagem> buscarIdTriagem(@Param("id_triagem") int id_triagem);
 
     // Pagina com o id_usuario que fez a triagem da vítima
     @Query("SELECT new org.example.gsabg.dto.TriagemDTO(t.id_triagem, u.id_user, u.nome_completo, v.id_vitima," +
-            " t.data_triagem) FROM Triagem t JOIN t.usuario u JOIN t.vitima v WHERE (:nome IS NULL OR " +
-            "LOWER(u.nome_completo) LIKE LOWER(CONCAT('%', :nome, '%')))")
+            " t.data_triagem) FROM Triagem t JOIN t.usuario u JOIN t.vitima v WHERE t.id_triagem = :id_triagem")
     public Optional<TriagemDTO> buscarTriagemComInfo(@Param("id_triagem") int id_triagem);
 
     // Lista das prioridades
     @Query("from Triagem tri where tri.prioridade = :prioridade")
-    public List<Triagem> listaPriodidade(@Param("prioridade")PrioriEnum prioridade);
+    public List<Triagem> listaPrioridade(@Param("prioridade")PrioriEnum prioridade);
 
     // Lista de Classificação
     @Query("select tri from Triagem tri order by tri.classificacao asc")

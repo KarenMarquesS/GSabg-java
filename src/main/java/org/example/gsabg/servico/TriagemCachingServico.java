@@ -33,8 +33,7 @@ public class TriagemCachingServico {
 
     @Cacheable(value = "listaTriagemPorPrioridade", key = "#prioridade")
     public List<Triagem> listaPrioridade(PrioriEnum prioridade){
-        return tgR.listaPriodidade(prioridade);
-
+        return tgR.listaPrioridade(prioridade);
     }
 
     @Cacheable(value = "listaClassificacao")
@@ -42,12 +41,12 @@ public class TriagemCachingServico {
         return tgR.listaClassificacao();
     }
 
-    @Cacheable(value = "paginaTriagemPorData", key = "data")
+    @Cacheable(value = "paginaTriagemPorData", key = "#data")
     public Page<Triagem> paginaTriagemPorData(LocalDate data, Pageable pageable){
         return tgR.paginaTriagemPorData(data, pageable);
     }
 
-    @Cacheable(value = "paginaEstadoSaude", key = "estadoSaude")
+    @Cacheable(value = "paginaEstadoSaude", key = "#estadoSaude")
     public Page<Triagem> paginaEstadoSaude(String estadoSaude, Pageable pageable){
         return tgR.paginaEstadoSaude(estadoSaude, pageable);
     }

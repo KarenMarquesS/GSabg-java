@@ -84,14 +84,14 @@ public class TriagemController {
     }
 
 
-    @GetMapping(value = "/paginadas_estado")
+    @GetMapping(value = "/estadoSaude")
     public ResponseEntity<Page<Triagem>> retornaTriagensPorEstadoSaude(
-            @RequestParam(value = "estado") String estado,
+            @RequestParam(value = "estadoSaude") String estadoSaude,
             @RequestParam(value = "pagina", defaultValue = "0") Integer pagina,
-            @RequestParam(value = "tamanho", defaultValue = "4") Integer tamanho) {
+            @RequestParam(value = "tamanho", defaultValue = "3") Integer tamanho) {
         try {
             Pageable pageable = PageRequest.of(pagina, tamanho);
-            Page<Triagem> triagens = triC.paginaEstadoSaude(estado, pageable);
+            Page<Triagem> triagens = triC.paginaEstadoSaude(estadoSaude, pageable);
             return new ResponseEntity<>(triagens, HttpStatus.OK);
         } catch (IllegalArgumentException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -100,19 +100,22 @@ public class TriagemController {
         }
     }
 
-
-    @GetMapping(value = "/paginadas_data")
+    @GetMapping(value = "/data")
     public ResponseEntity<Page<Triagem>> retornaTriagensPorData(
             @RequestParam(value = "data") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate data,
             @RequestParam(value = "pagina", defaultValue = "0") Integer pagina,
             @RequestParam(value = "tamanho", defaultValue = "4") Integer tamanho) {
         try {
+            System.out.println("Data recebida" + data);
             Pageable pageable = PageRequest.of(pagina, tamanho);
             Page<Triagem> triagens = triC.paginaTriagemPorData(data, pageable);
+            System.out.println("Total de triagens" + triagens.getTotalElements());
             return new ResponseEntity<>(triagens, HttpStatus.OK);
         } catch (IllegalArgumentException e) {
+            e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         } catch (Exception e) {
+            e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
