@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @RequestMapping(value = "/vitima")
 public class VitimaController {
